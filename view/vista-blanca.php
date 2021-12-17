@@ -21,7 +21,7 @@ echo "<div class='inicio'>";
 echo "<a href='../view/salas.php' class='btn btn-dark' style='padding-left: 60px;padding-right: 60px; border-color: white'>Home</a>";
 echo "</div>";
 echo "<br><br>";
-echo "<h1>Mesas y reservas de la Sala Blanca</h1>";
+echo "<h1>Mesas de la Sala Blanca</h1>";
 
 
 //<a type='button' href='../process/filtro.php' class='filtro'>Filtro</a>

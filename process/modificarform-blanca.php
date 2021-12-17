@@ -11,6 +11,14 @@
     <title>Modificar</title>
 </head>
 <body>
+        <?php
+        include '../services/conexion.php';
+        $id_reserva = $_GET['id'];
+        $qry = $pdo->prepare("SELECT * FROM tbl_reserva where id_reserva = ?");
+        $qry->bindParam(1, $id_reserva);
+        $qry->execute();
+        $reserva=$qry->fetch(PDO::FETCH_ASSOC);
+        ?>
         <div class='log'>
                 <a href='../process/logout.php' class='btn btn-light' style='padding-left: 60px;padding-right: 60px; border-color: black; color: black;'>Logout</a>
         </div>
@@ -18,10 +26,11 @@
                 <a href='../view/reservas-blanca.php' class='btn btn-dark' style='padding-left: 60px;padding-right: 60px; border-color: white'>Back</a>
         </div>
         <form action="modificarpdo-blanca.php" method="post" class="caja" onsubmit="return validar()">
-                <h2>Generar reserva</h2>
+                <h2 class="titulo">Modificar reserva</h2>
+                <br>
                 <div class=alert id='mensaje'></div>
                 <p>Dia de la reserva</p>
-                <input type="date" id="fecha_inicio" min="<?php echo date("Y-m-d"); ?>">
+                <input name="fecha_inicio" type="date" id="fecha_inicio" min="<?php echo date("Y-m-d"); ?>" value="<?php echo $reserva['fecha_inicio'] ?>">
                 <br>
                 <p>Hora de la reserva</p>
                 <select name="hora_reserva" id="hora_reserva">
@@ -37,9 +46,9 @@
                 </select>
                 <br>
                 <p>Introduce el nombre del titular de la reserva</p>
-                <input type="text" name="nombre_cliente" id='nombre_cliente'>
+                <input type="text" name="nombre_cliente" id='nombre_cliente' value="<?php echo $reserva['nombre_cliente'] ?>">
                 <br>
-                <input type="hidden" name="id_mesa" value="<?php echo $_GET['id'] ?>">
+                <input type="hidden" name="id_reserva" value="<?php echo $_GET['id'] ?>">
                 <br>
                 <input type="submit" value="Modificar reserva" class="btn btn-dark">
         </form>

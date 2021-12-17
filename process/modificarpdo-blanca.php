@@ -11,7 +11,7 @@ $nombre_cliente=$_POST['nombre_cliente'];
 $id_reserva=$_POST['id_reserva'];
 
     $modreserva = $pdo->prepare("UPDATE tbl_reserva
-    SET fecha_inicio = ?, hora_reserva = ?, nombre_cliente = ?, id_reserva = ?
+    SET fecha_inicio = ?, hora_reserva = ?, nombre_cliente = ?
     where id_reserva= ?");
    
     $modreserva->bindParam(1, $fecha_inicio);

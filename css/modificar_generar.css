@@ -32,7 +32,11 @@ h2 {
     font-family: 'Zen Antique', serif;
     color: rgb(83, 82, 82);
     font-weight: bolder;
-    padding-bottom: 6px;
+}
+
+.titulo {
+    position: fixed;
+    left: 25%;
 }
 
 p {
