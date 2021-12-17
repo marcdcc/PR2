@@ -13,23 +13,28 @@
         <img src="../img/fondo-salas.gif" width="100%">
     </div>
     <div class="contenido">
-        <a href='../process/logout.php' class="btn btn-secondary">Logout</a>
-        <div class="btn btn-secondary">
+        <div class="log">
+            <a href='../process/logout.php' class='btn btn-secondary' style='padding-left: 60px;padding-right: 60px;'>Logout</a>
+        </div>
+    <div class="inicio">
+        <div class="btn btn-secondary" style='padding-left: 60px;padding-right: 60px;'>
             <?php
                 include '../services/conexion.php';
                 session_start();
                 if(!empty($_SESSION['nom_user'])){
-                    echo "<b>Hola ".$_SESSION['nom_user']."</b>";
+                    echo "Hola ".$_SESSION['nom_user'];
                     $nom=$_SESSION['nom_user'];
                 }
             ?>
         </div>
-        <form action='vista.php' method='post'>
-            <a href="./vista-blanca.php?id=1"><img class="sala" src="../img/sala-blanca.jpg"></a>
-            <a href="./vista-roja.php?id=2"><img class="sala" src="../img/sala-roja.png"></a>
-            <a href="./vista-azul.php?id=3"><img class="sala" src="../img/sala-azul.jpg"></a>
-            <a href="./vista-verde.php?id=4"><img class="sala" src="../img/sala-verde.jpg"></a>
-        </form>
+    </div>
+    <br><br><br><br><br>
+    <form>
+    <a href="./vista-blanca.php?id=1"><img class="sala" src="../img/sala-blanca.jpg"></a>Sala Blanca
+    <a href="./vista-roja.php?id=2"><img class="sala" src="../img/sala-roja.png"></a>Sala Roja
+    <a href="./vista-azul.php?id=3"><img class="sala" src="../img/sala-azul.jpg"></a>Sala Azul
+    <a href="./vista-verde.php?id=4"><img class="sala" src="../img/sala-verde.jpg"></a>Sala Verde
+    </form>
     </div>
 </body>
 </html>

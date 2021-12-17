@@ -20,12 +20,12 @@ echo "<div class='log'>";
 echo "<a href='../process/logout.php' class='btn btn-light' style='padding-left: 60px;padding-right: 60px; border-color: black' color: black;>Logout</a>";
 echo "</div>";
 echo "<div class='inicio'>";
-echo "<a href='../view/salas.php' class='btn btn-danger' style='padding-left: 60px;padding-right: 60px; background-color: #7e2029;'>Inicio</a>";
+echo "<a href='../view/salas.php' class='btn btn-danger' style='padding-left: 60px;padding-right: 60px; background-color: #7e2029;'>Home</a>";
 echo "</div>";
 echo "<br><br>";
-echo "<h1>Mesas y reservas de la Sala Blanca</h1>";
-echo "<a type='button' href='../process/filtro.php' class='filtro'>Filtro</a>";
-echo "<div></div>";
+echo "<h1>Mesas y reservas de la Sala Roja</h1>";
+
+//echo "<a type='button' href='../process/filtro.php' class='filtro'>Filtro</a>";
 
 
 $sentencia = $pdo->prepare("SELECT tbl_mesa.id_mesa, tbl_mesa.reservada, max(tbl_reserva.id_reserva) as id_reserva, any_value(tbl_reserva.num_personas) as num_personas,
@@ -41,36 +41,19 @@ $sentencia = $pdo->prepare("SELECT tbl_mesa.id_mesa, tbl_mesa.reservada, max(tbl
     $listaMesas=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($listaMesas as $mesa) {
-    if ($mesa['reservada']==0) {
-        
-        include 'vistacomun.php';
 
-        echo "<tr>";
-        echo "<td><a type='button' class='btn btn-dark' href='../process/generarform.php?id={$mesa['id_mesa']}&nsillas={$mesa['num_silla_dispo']}'>Generar reserva</a></td>";
-        echo "</tr>";
-        echo "</table>";
-    }
-}
-foreach ($listaMesas as $mesa) {
-    if ($mesa['reservada']==1) {
-    
-        include 'vistacomun.php';
+    include 'vistacomun.php';
 
-        echo "<tr>";
-        echo "<td><p>INICIO RESERVA -> {$mesa['fecha_inicio']}</p></td>";
-        echo "</tr>";
-
-        echo "<td><a type='button' class='btn btn-dark'  href='../process/modificarform.php?id={$mesa['id_reserva']}&npersonas={$mesa['num_personas']}&nombrecli={$mesa['nombre_cliente']}&nsillas={$mesa['num_silla_dispo']}'>Modificar reserva</a></td>";
-        echo "</tr>";
-
-        echo "<tr>";
-        echo "<td><a type='button' class='btn btn-dark'  href='../process/liberar.php?id={$mesa['id_reserva']}'  onclick=\"return confirm('¿Estás seguro de liberar la mesa?')\">Liberar reserva</a></td>";
-        echo "</tr>";
-        echo "</table>";
-    }
+    echo "<tr>";
+    echo "<td><a type='button' class='btn btn-outline-danger' href='../process/generarform-roja.php?id={$mesa['id_mesa']}&nsillas={$mesa['num_silla_dispo']}'>Generar reserva</a></td>";
+    echo "</tr>";
+    echo "</table>";
 }
 
 ?>
 
+<div class="btn_reservas">
+    <a href="../view/reservas-roja.php" type="button" class='btn btn-danger' style='padding-left: 100px;padding-right: 100px; border-color: white; background-color: #7e2029; font-size: 20px;'>Ver Reservas</a>
+</div>
 </body>
 </html>

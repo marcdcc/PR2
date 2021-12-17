@@ -20,6 +20,18 @@ body {
     z-index: 1000;
 }
 
+.log {
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.inicio {
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
 .sala {
     width: 375px;
     height: 250px;

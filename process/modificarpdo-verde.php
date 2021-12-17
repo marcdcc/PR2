@@ -3,23 +3,25 @@ include '../services/config.php';
 include '../services/conexion.php';
 include '../services/reserva.php';
 
-$num_personas=$_POST['num_personas_reserva'];
+$fecha_inicio=$_POST['fecha_inicio'];
+$hora_reserva=$_POST['hora_reserva'];
 $nombre_cliente=$_POST['nombre_cliente'];
 $id_reserva=$_POST['id_reserva'];
 
 try {
 
     $modreserva = $pdo->prepare("UPDATE tbl_reserva
-    SET nombre_cliente = ?,num_personas = ?
+    SET nombre_cliente = ?,fecha_inicio = ?, hora_reserva = ?
     where id_reserva= ?");
    
-    $modreserva->bindParam(1, $nombre_cliente);
-    $modreserva->bindParam(2, $num_personas);
-    $modreserva->bindParam(3, $id_reserva);
+    $modreserva->bindParam(1, $fecha_inicio);
+    $modreserva->bindParam(2, $hora_reserva);
+    $modreserva->bindParam(3, $nombre_cliente);
+    $modreserva->bindParam(4, $id_reserva);
    
     $modreserva->execute();
 
-    header('Location: ../view/vista.php');
+    header('Location: ../view/vista-verde.php');
     
 }
 catch (PDOException $e) {

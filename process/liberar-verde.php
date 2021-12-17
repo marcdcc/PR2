@@ -3,7 +3,7 @@ include '../services/config.php';
 include '../services/conexion.php';
 include '../services/reserva.php';
 
-$id = $_GET['id'];
+$id_reserva = $_GET['id_reserva'];
 
 $fecha_actual=date("Y-m-d H:i:s", time());
 
@@ -15,11 +15,11 @@ try {
     
 
     $fin_reserva = $pdo->prepare("UPDATE tbl_reserva
-    SET tbl_reserva.fecha_final = ?
+    SET tbl_reserva.hora_reserva = ?
     where id_reserva = ?");
     
     $fin_reserva->bindParam(1, $fecha_actual);
-    $fin_reserva->bindParam(2, $id);    
+    $fin_reserva->bindParam(2, $id_reserva);    
     
     $fin_reserva->execute();
 
@@ -35,7 +35,7 @@ try {
     $mesa0->execute();
     //Fetch your records and display.
 
-    header('Location: ../view/vista.php');
+    header('Location: ../view/vista-verde.php');
 
 }
 catch (PDOException $e) {
