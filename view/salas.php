@@ -14,27 +14,45 @@
     </div>
     <div class="contenido">
         <div class="log">
-            <a href='../process/logout.php' class='btn btn-secondary' style='padding-left: 60px;padding-right: 60px;'>Logout</a>
+            <a href='../process/logout.php' class='btn btn-secondary' style='padding-left: 60px;padding-right: 60px; border-color: white;'>Logout</a>
         </div>
-    <div class="inicio">
-        <div class="btn btn-secondary" style='padding-left: 60px;padding-right: 60px;'>
-            <?php
-                include '../services/conexion.php';
-                session_start();
-                if(!empty($_SESSION['nom_user'])){
-                    echo "Hola ".$_SESSION['nom_user'];
-                    $nom=$_SESSION['nom_user'];
-                }
-            ?>
+        <div class="inicio">
+            <div class="btn btn-secondary" style='padding-left: 60px;padding-right: 60px; border-color: white;'>
+                <?php
+                    include '../services/conexion.php';
+                    session_start();
+                    if(!empty($_SESSION['nom_user'])){
+                        echo "Hola ".$_SESSION['nom_user'];
+                        $nom=$_SESSION['nom_user'];
+                    }
+                ?>
+            </div>
         </div>
-    </div>
-    <br><br><br><br><br>
-    <form>
-    <a href="./vista-blanca.php?id=1"><img class="sala" src="../img/sala-blanca.jpg"></a>Sala Blanca
-    <a href="./vista-roja.php?id=2"><img class="sala" src="../img/sala-roja.png"></a>Sala Roja
-    <a href="./vista-azul.php?id=3"><img class="sala" src="../img/sala-azul.jpg"></a>Sala Azul
-    <a href="./vista-verde.php?id=4"><img class="sala" src="../img/sala-verde.jpg"></a>Sala Verde
-    </form>
+    <br><br><br>
+        <a href="./vista-blanca.php?id=1">
+            <div class="blanca" >
+                <img class="sala" src="../img/sala-blanca.jpg">
+                <p class='white' style="border-color: white;">SALA BLANCA</p>
+            </div>
+        </a>
+        <a href="./vista-roja.php?id=2">
+            <div class="roja">
+                <img class="sala" src="../img/sala-roja.png">
+                <p class='red' style="border-color: white;">SALA ROJA</p>
+            </div>
+        </a>
+        <a href="./vista-azul.php?id=3">
+            <div class="azul">
+                <img class="sala" src="../img/sala-azul.jpg">
+                <p class='blue' style="border-color: white;">SALA AZUL</p>
+            </div>
+        </a>
+        <a href="./vista-verde.php?id=4">
+            <div class="verde">
+                <img class="sala" src="../img/sala-verde.jpg">
+                <p class='green' style="border-color: white;">SALA VERDE</p>
+            </div>
+        </a>
     </div>
 </body>
 </html>
