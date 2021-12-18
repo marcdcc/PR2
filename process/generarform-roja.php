@@ -23,7 +23,7 @@
         <p><br></p>
         <div class=alert id='mensaje'></div>
         <p>Dia de la reserva</p>
-        <input type="date" id="fecha_inicio" min="<?php echo date("Y-m-d"); ?>">
+        <input type="date" name="fecha_inicio" id="fecha_inicio" min="<?php echo date("Y-m-d"); ?>">
         <br>
         <p>Hora de la reserva</p>
         <select name="hora_reserva" id="hora_reserva">

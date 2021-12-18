@@ -17,14 +17,11 @@ $id_mesa=$_POST['id_mesa'];
     $mesa1->bindParam(1, $id_mesa);
    
     $mesa1->execute();
-
-    //INSERT INTO tbl_reserva (fecha_inicio,nombre_cliente,num_personas,id_mesa)
-    //VALUES ( '2021-11-10 15:00:00', 'Javi', '1', '2');
     
     
     //INSERTAR RESERVA
-    $inicio_reserva = $pdo->prepare("INSERT INTO tbl_reserva (fecha_inicio,hora_reserva,nombre_cliente,id_mesa)
-    VALUES (?, ?, ?, ?)");
+    $inicio_reserva = $pdo->prepare("INSERT INTO tbl_reserva (fecha_inicio,hora_reserva,nombre_cliente,id_mesa,estado_reserva)
+    VALUES (?, ?, ?, ?, 1)");
     
     $inicio_reserva->bindParam(1, $fecha_inicio);
     $inicio_reserva->bindParam(2, $hora_reserva);

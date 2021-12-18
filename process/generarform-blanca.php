@@ -35,7 +35,6 @@
                 <option value="18:00">18:00h</option>
                 <option value="20:00">20:00h</option>
                 <option value="22:00">22:00h</option>
-                <option value="17:05">17:05h</option>
         </select>
         <br>
         <p>Introduce el nombre del titular de la reserva</p>
@@ -43,7 +42,7 @@
         <br>
         <input type="hidden" name="id_mesa" value="<?php echo $_GET['id'] ?>">
         <br>
-        <input type="submit" value="Reservar" class="btn btn-dark">
+        <input type="submit" value="Reservar" class="btn btn-dark" style='padding-left: 30px;padding-right: 30px;'>
 </form>
 </body>
 </html>

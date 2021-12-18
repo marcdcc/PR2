@@ -14,10 +14,10 @@
     </div>
     <div class="contenido">
         <div class="log">
-            <a href='../process/logout.php' class='btn btn-secondary' style='padding-left: 60px;padding-right: 60px; border-color: white;'>Logout</a>
+            <a href='../process/logout.php' class='btn btn-secondary' style='padding-left: 60px;padding-right: 60px; background-color: black; border-color: white;'>Logout</a>
         </div>
         <div class="inicio">
-            <div class="btn btn-secondary" style='padding-left: 60px;padding-right: 60px; border-color: white;'>
+            <div class="btn btn-secondary" style='padding-left: 60px;padding-right: 60px; background-color: black; border-color: white;'>
                 <?php
                     include '../services/conexion.php';
                     session_start();

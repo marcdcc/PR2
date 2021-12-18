@@ -94,7 +94,7 @@ body {
 /* mensaje de alerta JS Login */
 
 #mensaje {
-    color: rgb(124, 123, 123);
+    color: rgb(255, 0, 0);
     font-family: 'Zen Antique', serif;
     font-size: 15px;
 }

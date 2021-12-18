@@ -23,8 +23,8 @@ $id_mesa=$_POST['id_mesa'];
     
     
     //INSERTAR RESERVA
-    $inicio_reserva = $pdo->prepare("INSERT INTO tbl_reserva (fecha_inicio,hora_reserva,nombre_cliente,id_mesa)
-    VALUES (?, ?, ?, ?)");
+    $inicio_reserva = $pdo->prepare("INSERT INTO tbl_reserva (fecha_inicio,hora_reserva,nombre_cliente,id_mesa,estado_reserva)
+    VALUES (?, ?, ?, ?, 1)");
     
     $inicio_reserva->bindParam(1, $fecha_inicio);
     $inicio_reserva->bindParam(2, $hora_reserva);

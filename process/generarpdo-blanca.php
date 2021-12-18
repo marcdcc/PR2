@@ -17,16 +17,6 @@ $id_mesa=$_POST['id_mesa'];
     $mesa1->bindParam(1, $id_mesa);
    
     $mesa1->execute();
-/*
-    $reserva1 = $pdo->prepare("UPDATE tbl_reserva
-    SET tbl_reserva.estado_reserva = 1
-    where id_reserva=?");
-   
-    $reserva1->bindParam(1, $id_reserva);
-   
-    $reserva1->execute();
-
-    */
     
     
     //INSERTAR RESERVA
@@ -49,15 +39,7 @@ $id_mesa=$_POST['id_mesa'];
     $mesa1->bindParam(1, $id_mesa);   
     
     $mesa1->execute();
-/*
-    $reserva1 = $pdo->prepare("UPDATE tbl_reserva
-    SET estado_reserva = 1
-    where id_reserva = ?");
     
-    $reserva1->bindParam(1, $estado_reserva);   
-    
-    $reserva1->execute();
-*/
     header('Location: ../view/vista-blanca.php');
 }
 catch (PDOException $e) {

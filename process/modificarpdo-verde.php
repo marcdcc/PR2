@@ -1,4 +1,6 @@
 <?php
+
+try {
 include '../services/config.php';
 include '../services/conexion.php';
 include '../services/reserva.php';
@@ -8,10 +10,8 @@ $hora_reserva=$_POST['hora_reserva'];
 $nombre_cliente=$_POST['nombre_cliente'];
 $id_reserva=$_POST['id_reserva'];
 
-try {
-
     $modreserva = $pdo->prepare("UPDATE tbl_reserva
-    SET nombre_cliente = ?,fecha_inicio = ?, hora_reserva = ?
+    SET fecha_inicio = ?, hora_reserva = ?, nombre_cliente = ?
     where id_reserva= ?");
    
     $modreserva->bindParam(1, $fecha_inicio);

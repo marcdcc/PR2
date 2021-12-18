@@ -3,16 +3,14 @@ include '../services/config.php';
 include '../services/conexion.php';
 include '../services/reserva.php';
 
-$id_reserva = $_GET['id_reserva'];
+$id_reserva = $_GET['id'];
 
-$fecha_actual=date("Y-m-d H:i:s", time());
+$fecha_actual=date("Y-m-d");
 
 
 // Bind
 
 try {
-
-    
 
     $fin_reserva = $pdo->prepare("UPDATE tbl_reserva
     SET tbl_reserva.hora_reserva = ?
@@ -30,9 +28,18 @@ try {
     SET tbl_mesa.reservada = 0
     where tbl_reserva.id_reserva=?");
    
-    $mesa0->bindParam(1, $id);
+    $mesa0->bindParam(1, $id_reserva);
    
     $mesa0->execute();
+
+    
+    $reserva0 = $pdo->prepare("UPDATE tbl_reserva
+    SET tbl_reserva.estado_reserva = 0
+    where tbl_reserva.id_reserva=?");
+   
+    $reserva0->bindParam(1, $id_reserva);
+   
+    $reserva0->execute();
     //Fetch your records and display.
 
     header('Location: ../view/vista-roja.php');
