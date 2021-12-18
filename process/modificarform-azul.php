@@ -27,6 +27,7 @@
         </div>
         <form action="modificarpdo-azul.php" method="post" class="caja" onsubmit="return validar()">
                 <h2 class="titulo">Modificar reserva</h2>
+                <p><br></p>
                 <div class=alert id='mensaje'></div>
                 <p>Dia de la reserva</p>
                 <input name="fecha_inicio" type="date" id="fecha_inicio" min="<?php echo date("Y-m-d"); ?>" value="<?php echo $reserva['fecha_inicio'] ?>">
@@ -41,7 +42,6 @@
                         <option value="18:00">18:00h</option>
                         <option value="20:00">20:00h</option>
                         <option value="22:00">22:00h</option>
-                        <option value="24:00">24:00h</option>
                 </select>
                 <br>
                 <p>Introduce el nombre del titular de la reserva</p>

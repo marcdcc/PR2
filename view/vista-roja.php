@@ -20,7 +20,7 @@ echo "<div class='log'>";
 echo "<a href='../process/logout.php' class='btn btn-light' style='padding-left: 60px;padding-right: 60px; border-color: black' color: black;>Logout</a>";
 echo "</div>";
 echo "<div class='inicio'>";
-echo "<a href='../view/salas.php' class='btn btn-danger' style='padding-left: 60px;padding-right: 60px; background-color: #7e2029;'>Home</a>";
+echo "<a href='../view/salas.php' class='btn btn-danger' style='padding-left: 60px;padding-right: 60px; border-color: white; background-color: #7e2029;'>Home</a>";
 echo "</div>";
 echo "<br><br>";
 echo "<h1>Mesas de la Sala Roja</h1>";
@@ -40,12 +40,18 @@ $sentencia = $pdo->prepare("SELECT tbl_mesa.id_mesa, tbl_mesa.reservada, max(tbl
     $sentencia->execute();
     $listaMesas=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 
-foreach ($listaMesas as $mesa) {
-
+foreach ($listaMesas as $mesa) {    
     include 'vistacomun.php';
 
     echo "<tr>";
-    echo "<td><a type='button' class='btn btn-outline-danger' href='../process/generarform-roja.php?id={$mesa['id_mesa']}&nsillas={$mesa['num_silla_dispo']}'>Generar reserva</a></td>";
+    echo "<td><a type='button' class='btn btn-outline-dark' href='../process/generarform-roja.php?id={$mesa['id_mesa']}&nsillas={$mesa['num_silla_dispo']}'>Generar reserva</a></td>";
+    echo "</tr>";
+
+    echo "<tr>";
+    echo "<td></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "<td></td>";
     echo "</tr>";
     echo "</table>";
 }

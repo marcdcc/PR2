@@ -24,7 +24,6 @@ echo "<br><br>";
 echo "<h1>Mesas de la Sala Blanca</h1>";
 
 
-//<a type='button' href='../process/filtro.php' class='filtro'>Filtro</a>
 $sentencia = $pdo->prepare("SELECT tbl_mesa.id_mesa, tbl_mesa.reservada, tbl_mesa.num_silla_dispo, tbl_ubicacion.tipo_ubi, tbl_mesa.id_ubi
 from tbl_mesa
 left outer join tbl_reserva on tbl_mesa.id_mesa=tbl_reserva.id_mesa 
@@ -41,6 +40,13 @@ foreach ($listaMesas as $mesa) {
 
     echo "<tr>";
     echo "<td><a type='button' class='btn btn-outline-dark' href='../process/generarform-blanca.php?id={$mesa['id_mesa']}&nsillas={$mesa['num_silla_dispo']}'>Generar reserva</a></td>";
+    echo "</tr>";
+
+    echo "<tr>";
+    echo "<td></td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "<td></td>";
     echo "</tr>";
     echo "</table>";
 }

@@ -19,7 +19,8 @@
 </div>
 
 <form action="generarpdo-blanca.php" method="post" class="caja" onsubmit="return validar()">
-        <h2>Generar reserva</h2>
+        <h2 class="titulo">Generar reserva</h2>
+        <p><br></p>
         <div class=alert id='mensaje'></div>
         <p>Dia de la reserva</p>
         <input type="date" name="fecha_inicio" id="fecha_inicio" min="<?php echo date('Y-m-d'); ?>">
@@ -34,14 +35,13 @@
                 <option value="18:00">18:00h</option>
                 <option value="20:00">20:00h</option>
                 <option value="22:00">22:00h</option>
-                <option value="24:00">24:00h</option>º
+                <option value="17:05">17:05h</option>
         </select>
         <br>
         <p>Introduce el nombre del titular de la reserva</p>
         <input type="text" name="nombre_cliente" id='nombre_cliente'>
         <br>
         <input type="hidden" name="id_mesa" value="<?php echo $_GET['id'] ?>">
-        <?php /*<input type="hidden" name="estado_reserva" value="<?php echo $_GET['estado'] ?>">*/ ?>
         <br>
         <input type="submit" value="Reservar" class="btn btn-dark">
 </form>

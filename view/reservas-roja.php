@@ -24,9 +24,9 @@
 
         echo "<form class='caja' method='post'>";
             echo "<div>";
-            echo "<input type='number' class='btn btn-dark' name='id_mesa' id='id_mesa' min='1' max='8' placeholder='Mesa'> ";
-            echo "<input type='date' class='btn btn-dark' name='fecha_inicio' id='fecha_inicio'> ";
-            echo "<input type='time' class='btn btn-dark' name='hora_reserva' id='hora_reserva'> ";
+            echo "<input type='number' class='btn btn-dark' style='border-color: white; background-color: #7e2029;' name='id_mesa' id='id_mesa' min='9' max='16' placeholder='Mesa'> ";
+            echo "<input type='date' class='btn btn-dark' style='border-color: white; background-color: #7e2029;' name='fecha_inicio' id='fecha_inicio'> ";
+            echo "<input type='time' class='btn btn-dark' style='border-color: white; background-color: #7e2029;' name='hora_reserva' id='hora_reserva'> ";
             echo "<input  type='submit' class='btn btn-light' name='enviar' value='FILTRAR'>";
             echo "</div>";
         echo "</form>";
@@ -57,7 +57,7 @@
         </tr>
         <?php
         if(!isset($_POST['enviar'])){
-            $stmt = $pdo->prepare('SELECT * FROM tbl_reserva where estado_reserva = 1 and id_mesa >= 9 and id_mesa <= 16 and fecha_inicio >= CURDATE() and  hora_reserva <> CURTIME() ORDER BY id_reserva DESC');
+            $stmt = $pdo->prepare('SELECT * FROM tbl_reserva where estado_reserva = 1 and id_mesa >= 9 and id_mesa <= 16 and fecha_inicio >= CURDATE() and  hora_reserva <> CURTIME() ORDER BY fecha_inicio ASC');
             $stmt->execute();
             $sentencia=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -76,7 +76,7 @@
             $table = $_POST['id_mesa'];
             $dia = $_POST['fecha_inicio'];
             $hora = $_POST['hora_reserva'];
-            $stmt = $pdo->prepare("SELECT * FROM tbl_reserva where estado_reserva = 1 and id_mesa >= 9 and id_mesa <= 16 and fecha_inicio >= CURDATE() and  hora_reserva <> CURTIME() and id_mesa like '%$table%' and fecha_inicio like '%$dia%' and hora_reserva like '%$hora%' ORDER BY id_reserva DESC");
+            $stmt = $pdo->prepare("SELECT * FROM tbl_reserva where estado_reserva = 1 and id_mesa >= 9 and id_mesa <= 16 and fecha_inicio >= CURDATE() and  hora_reserva <> CURTIME() and id_mesa like '%$table%' and fecha_inicio like '%$dia%' and hora_reserva like '%$hora%' ORDER BY fecha_inicio ASC");
             $stmt->execute();
             $sentencia=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -94,5 +94,8 @@
         }
         ?>
     </table>
+    <div class="btn_reservas">
+    <a href="../view/historial-roja.php" type="button" class='btn btn-danger' style='padding-left: 100px;padding-right: 100px; border-color: white; background-color: #7e2029; font-size: 20px;'>Historial de Reservas</a>
+</div>
 </body>
 </html>

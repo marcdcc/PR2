@@ -97,6 +97,10 @@ p {
     color: rgb(83, 82, 82);
 }
 
+.btn-dark::placeholder {
+    color: #fff;
+}
+
 .ocupada {
     color: red;
 }
@@ -124,7 +128,7 @@ p {
     width: 90%;
     margin-left: 5%;
     text-align: center;
-    border: 2px solid rgb(27, 102, 20);
+    border: 2px solid rgb(21, 255, 0);
     background: white;
 }
 
@@ -136,7 +140,7 @@ p {
     left: 50%;
     text-align: left;
     transform: translate(-50%, -50%);
-    width: 32.5%;
+    width: 33%;
     padding: 1%;
     margin-top: 3%;
     border-radius: 5px;
