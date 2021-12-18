@@ -60,7 +60,7 @@ body {
     float: left;
     background: linear-gradient(-50deg, #ffffff, #a3a3a3, #5a5a5a, #000000);
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    animation: gradient 10s ease infinite;
     border-radius: 5%;
 }
 
