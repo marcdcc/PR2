@@ -2,8 +2,7 @@
 
 ##URL HOSTING 
 
-
-
+https://restaurantemd.000webhostapp.com/view/login.php
 
 
 Hay un services/config.php ignorado por contener datos sensibles, tener en cuenta cuando se importa el reporistorio en local.
@@ -22,16 +21,21 @@ Integrantes del grupo:
 Marc Diaz
 
 
-Inicio de sesión
+Inicio de sesión para admin:
 
-Login: admin
+Login: admin@gmail.com
 Password: admin
+
+Inicio de sesión para admin:
+
+Login: dani.ruano@gmail.com
+Password: dani.ruano
 
 ----------------------------------------------------------------------------
 
 # Título del Proyecto
 PR2_DiazMarc
-Consiste en una página web que facilita la gestión de sillas, mesas y salas de un restaurante.
+Consiste en una página web que facilita la gestión de reservas de un restaurante.
 
 ## Comenzando 🚀
 Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas.
