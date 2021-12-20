@@ -23,11 +23,8 @@ echo "</div>";
 echo "<br><br>";
 echo "<h1>Mesas de la Sala Azul</h1>";
 
-//echo "<a type='button' href='../process/filtro.php' class='filtro'>Filtro</a>";
 
-
-$sentencia = $pdo->prepare("SELECT tbl_mesa.id_mesa, tbl_mesa.reservada, max(tbl_reserva.id_reserva) as id_reserva, any_value(tbl_reserva.num_personas) as num_personas,
-    any_value(tbl_reserva.nombre_cliente) as nombre_cliente, max(tbl_reserva.fecha_inicio) as fecha_inicio, tbl_mesa.num_silla_dispo, tbl_ubicacion.tipo_ubi, tbl_mesa.id_ubi
+$sentencia = $pdo->prepare("SELECT tbl_mesa.id_mesa, tbl_mesa.reservada, tbl_mesa.num_silla_dispo, tbl_ubicacion.tipo_ubi, tbl_mesa.id_ubi
     from tbl_mesa
     left outer join tbl_reserva on tbl_mesa.id_mesa=tbl_reserva.id_mesa 
     left outer join tbl_ubicacion on tbl_ubicacion.id_ubi=tbl_mesa.id_ubi

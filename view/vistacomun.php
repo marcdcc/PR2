@@ -29,12 +29,3 @@ echo "<table class='column'>";
         echo "<td></td>";
         echo "</tr>";
 
-        /*
-        echo "<tr>";
-        if ($mesa["fecha_inicio"] && $mesa["hora_reserva"] != $mesa["hora_reserva"]) {
-            echo "<td><b><p class='ocupada'>OCUPADA</p></b></td>";
-        }else {
-            echo "<td><b><p class='libre'>LIBRE</p></b></td>";
-        }
-        echo "</tr>";
-        */

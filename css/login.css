@@ -68,7 +68,7 @@ body {
 
 /* cajas login */
 
-.login input[name='nom_user'],
+.login input[name='email'],
 .login input[name='password_user'] {
     width: 100%;
     line-height: 2.5em;

@@ -53,11 +53,12 @@ CREATE TABLE `tbl_mesa` (
 
 CREATE TABLE `tbl_reserva` (
   `id_reserva` int NOT NULL AUTO_INCREMENT,
-  `fecha_inicio` datetime DEFAULT NULL,
-  `fecha_final` datetime DEFAULT NULL,
+  `fecha_inicio` date DEFAULT NULL,
+  `hora_reserva` time DEFAULT NULL,
   `nombre_cliente` varchar(20)  DEFAULT NULL,
   `num_personas` varchar(2) DEFAULT NULL,
   `id_mesa` int DEFAULT NULL,
+  `estado_reserva` boolean DEFAULT NULL,
   PRIMARY KEY (`id_reserva`),
   KEY `fk_mesa_reserva_idx` (`id_mesa`),
   CONSTRAINT `fk_mesa_reserva` FOREIGN KEY (`id_mesa`) REFERENCES `tbl_mesa` (`id_mesa`)

@@ -9,7 +9,6 @@
     <title>Document</title>
 </head>
 <body>
-
     <?php
         include '../services/config.php';
         include '../services/conexion.php';
@@ -24,9 +23,9 @@
 
         echo "<form class='caja' method='post'>";
             echo "<div>";
-            echo "<input type='number' class='btn btn-dark' style='border-color: white; background-color: #146025; name='id_mesa' id='id_mesa' min='25' max='32' placeholder='Mesa'> ";
-            echo "<input type='date' class='btn btn-dark' style='border-color: white; background-color: #146025; name='fecha_inicio' id='fecha_inicio'> ";
-            echo "<input type='time' class='btn btn-dark' style='border-color: white; background-color: #146025; name='hora_reserva' id='hora_reserva'> ";
+            echo "<input type='number' class='btn btn-dark' style='border-color: white; background-color: #146025;' name='id_mesa' id='id_mesa' min='25' max='32' placeholder='Mesa'> ";
+            echo "<input type='date' class='btn btn-dark' style='border-color: white; background-color: #146025;' name='fecha_inicio' id='fecha_inicio'> ";
+            echo "<input type='time' class='btn btn-dark' style='border-color: white; background-color: #146025;' name='hora_reserva' id='hora_reserva'> ";
             echo "<input  type='submit' class='btn btn-light' name='enviar' value='FILTRAR'>";
             echo "</div>";
         echo "</form>";

@@ -1,4 +1,5 @@
 <?php 
+ob_start();
 include '../services/config.php';
 include '../services/conexion.php';
 include '../services/reserva.php';
@@ -50,3 +51,5 @@ catch (PDOException $e) {
     echo "Error : " . $e->getMessage();
 }
 
+
+ob_end_flush();

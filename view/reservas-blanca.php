@@ -56,7 +56,7 @@
         </tr>
         <?php
         if(!isset($_POST['enviar'])){
-            $stmt = $pdo->prepare('SELECT * FROM tbl_reserva where estado_reserva = 1 and id_mesa >= 1 and id_mesa <= 8 and fecha_inicio >= CURDATE() and  hora_reserva <> CURTIME() ORDER BY fecha_inicio ASC');
+            $stmt = $pdo->prepare('SELECT * FROM tbl_reserva where estado_reserva = 1 and id_mesa >= 1 and id_mesa <= 8 and fecha_inicio >= CURDATE() and  hora_reserva <> CURTIME() ORDER BY fecha_inicio ASC, hora_reserva ASC');
             $stmt->execute();
             $sentencia=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -75,7 +75,7 @@
             $table = $_POST['id_mesa'];
             $dia = $_POST['fecha_inicio'];
             $hora = $_POST['hora_reserva'];
-            $stmt = $pdo->prepare("SELECT * FROM tbl_reserva where estado_reserva = 1 and id_mesa >= 1 and id_mesa <= 8 and fecha_inicio >= CURDATE() and  hora_reserva <> CURTIME() and id_mesa like '%$table%' and fecha_inicio like '%$dia%' and hora_reserva like '%$hora%' ORDER BY fecha_inicio ASC");
+            $stmt = $pdo->prepare("SELECT * FROM tbl_reserva where estado_reserva = 1 and id_mesa >= 1 and id_mesa <= 8 and fecha_inicio >= CURDATE() and  hora_reserva <> CURTIME() and id_mesa like '%$table%' and fecha_inicio like '%$dia%' and hora_reserva like '%$hora%' ORDER BY fecha_inicio ASC, hora_reserva ASC");
             $stmt->execute();
             $sentencia=$stmt->fetchAll(PDO::FETCH_ASSOC);
 

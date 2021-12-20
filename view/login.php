@@ -1,3 +1,6 @@
+<?php
+ob_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +27,7 @@
                 ?>
             </div>
             <form class="caja" action='../process/login.proc.php' method='POST' onsubmit="return validar()">
-                <input type='nom_user' name='nom_user' id='nom_user' placeholder="Username"/><br><br>
+                <input type='email' name='email' id='email' placeholder="Email"/><br><br>
                 <input type='password' name='password_user' id='password_user' placeholder="Contraseña"/><br><br>
                 <input TYPE='SUBMIT' NAME='crear' VALUE='Iniciar sesión' class="btn btn-dark btn_login">
             </form>

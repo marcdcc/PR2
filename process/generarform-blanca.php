@@ -11,12 +11,12 @@
     <title>Modificar</title>
 </head>
 <body>
-<div class='log'>
-<a href='../process/logout.php' class='btn btn-light' style='padding-left: 60px;padding-right: 60px; border-color: black; color: black;'>Logout</a>
-</div>
-<div class='inicio'>
-<a href='../view/vista-blanca.php' class='btn btn-dark' style='padding-left: 60px;padding-right: 60px; border-color: white'>Back</a>
-</div>
+        <div class='log'>
+                <a href='../process/logout.php' class='btn btn-light' style='padding-left: 60px;padding-right: 60px; border-color: black; color: black;'>Logout</a>
+        </div>
+        <div class='inicio'>
+                <a href='../view/vista-blanca.php' class='btn btn-dark' style='padding-left: 60px;padding-right: 60px; border-color: white'>Back</a>
+        </div>
 
 <form action="generarpdo-blanca.php" method="post" class="caja" onsubmit="return validar()">
         <h2 class="titulo">Generar reserva</h2>

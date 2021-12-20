@@ -164,3 +164,22 @@ body {
         background-position: 0% 50%;
     }
 }
+
+
+/* tabla usuarios */
+
+.tbl_eventos {
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    border: 2px solid rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+}
+
+h1 {
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    color: white;
+    font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+}

@@ -1,12 +1,12 @@
 function validar() {
-    nom_user = document.getElementById('nom_user').value
+    email = document.getElementById('email').value
     password_user = document.getElementById('password_user').value
     mensaje = document.getElementById('mensaje')
 
-    if (nom_user == '' && password_user == '') {
+    if (email == '' && password_user == '') {
         mensaje.innerHTML = 'Introduce el usuario y la contraseña'
         return false
-    } else if (nom_user == '') {
+    } else if (email == '') {
         mensaje.innerHTML = 'Introduce el usuario'
         return false
     } else if (password_user == '') {

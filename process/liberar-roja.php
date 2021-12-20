@@ -1,4 +1,6 @@
 <?php 
+ob_start();
+
 include '../services/config.php';
 include '../services/conexion.php';
 include '../services/reserva.php';
@@ -43,9 +45,8 @@ try {
     //Fetch your records and display.
 
     header('Location: ../view/vista-roja.php');
-
+    ob_end_flush();
 }
 catch (PDOException $e) {
     echo "Error : " . $e->getMessage();
 }
-
