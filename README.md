@@ -4,6 +4,8 @@
 
 https://restaurantemd.000webhostapp.com/view/login.php
 
+https://github.com/marcdcc/PR2_DiazMarc
+
 
 Hay un services/config.php ignorado por contener datos sensibles, tener en cuenta cuando se importa el reporistorio en local.
 Tiene la siguiente estructura:
