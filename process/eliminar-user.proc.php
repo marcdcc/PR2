@@ -1,16 +1,16 @@
 <?php 
 ob_start();
 
+include '../services/conexion.php';
+include '../services/config.php';
+include '../services/user.php';
+
+$id_user = $_GET['id'];
+
 try {
-    include '../services/conexion.php';
-    include '../services/config.php';
-    include '../services/user.php';
-
-    $id = $_GET['id'];
-
-    $pdo->beginTransaction();
-    $stmt = $pdo->prepare("DELETE FROM tbl_users WHERE id = ?");
-    $stmt->bindParam(1, $id);
+    
+    $stmt = $pdo->prepare("DELETE FROM tbl_users WHERE id_user = ?");
+    $stmt->bindParam(1, $id_user);
     $stmt->execute();
 
     if($stmt->execute()){
@@ -20,10 +20,7 @@ try {
         header("location: ../view/zona_admin.php?error=errorelim");
         ob_end_flush();
     }
-
-    $pdo->commit();
 }catch (PDOException $e) {
-    $pdo->rollBack();
     echo "Error : " . $e->getMessage();
 }
 

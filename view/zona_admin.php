@@ -22,8 +22,6 @@ ob_start();
         <div class="inicio">
             <div class="btn btn-secondary" style='padding-left: 60px;padding-right: 60px; background-color: black; border-color: white;'>
                 <?php
-                ob_start();
-                    include '../services/config.php';
                     include '../services/conexion.php';
                     session_start();
                     if(!empty($_SESSION['email'])){
@@ -34,16 +32,18 @@ ob_start();
         </div>
     <div>
         <?php
-        echo "<h1>Reservas de la Sala Blanca</h1>";
+        echo "<h1>Personal del restaurante</h1>";
             
             try{
-                $stmt = $pdo->prepare("SELECT * FROM tbl_users ORDER BY nom_user ASC");
-                $stmt->bindParam(1, $id);
+                $stmt = $pdo->prepare("SELECT * FROM tbl_users ORDER BY id_user ASC");
                 $stmt->execute();
                 $sentencia=$stmt->fetchAll(PDO::FETCH_ASSOC);
                 ?>
                 <table class="tbl_eventos">
                     <tr class="tbl_eventos">
+                        <td>
+                            <h4>ID</h4>
+                        </td>    
                         <td>
                             <h4>Nombre</h4>
                         </td>
@@ -69,13 +69,14 @@ ob_start();
                         <?php
                         foreach($sentencia as $row){ 
                         echo "<tr class='tbl_eventos'>";
+                        echo "<td>{$row["id_user"]}</td>";
                         echo "<td>{$row["nom_user"]}</td>";
                         echo "<td>{$row["apellido_user"]}</td>";
                         echo "<td>{$row["email_user"]}</td>";
                         echo "<td>{$row["password_user"]}</td>";
                         echo "<td>{$row["rol_user"]}</td>";
-                        echo "<td><a class='btn btn-warning' href='../process/modificarform-user.proc.php'>Modificar</a></td>";
-                        echo "<td><a class='btn btn-danger' href='../process/eliminar-user.proc.php'>Eliminar</a></td>";
+                        echo "<td><a class='btn btn-warning' href='../process/modificarform-user.proc.php?id={$row['id_user']}'>Modificar</a></td>";
+                        echo "<td><a class='btn btn-danger' href='../process/eliminar-user.proc.php?id={$row['id_user']}'>Eliminar</a></td>";
                         echo "</tr>";
                         }
                         ?>

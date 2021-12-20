@@ -20,10 +20,10 @@
         $reserva=$qry->fetch(PDO::FETCH_ASSOC);
         ?>
         <div class='log'>
-                <a href='../process/logout.php' class='btn btn-light' style='padding-left: 60px;padding-right: 60px; border-color: black; color: black;'>Logout</a>
+                <a href='../process/logout.php' class='btn btn-light' style='padding-left: 60px; padding-right: 60px; border-color: black; color: black;'>Logout</a>
         </div>
         <div class='inicio'>
-                <a href='../view/reservas-roja.php' class='btn btn-dark' style='padding-left: 60px;padding-right: 60px; border-color: white; background-color: #7e2029;'>Back</a>
+                <a href='../view/reservas-roja.php' class='btn btn-dark' style='padding-left: 60px; padding-right: 60px; border-color: white; background-color: #7e2029;'>Back</a>
         </div>
         <form action="modificarpdo-roja.php" method="post" class="caja" onsubmit="return validar()">
                 <h2 class="titulo">Modificar reserva</h2>
@@ -47,7 +47,7 @@
                 <p>Introduce el nombre del titular de la reserva</p>
                 <input type="text" name="nombre_cliente" id='nombre_cliente' value="<?php echo $reserva['nombre_cliente'] ?>">
                 <br>
-                <input type="hidden" name="id_mesa" value="<?php echo $_GET['id_mesa'] ?>">
+                <input type="hidden" name="id_reserva" value="<?php echo $_GET['id'] ?>">
                 <br>
                 <input type="submit" value="Modificar reserva" class="btn btn-dark">
         </form>

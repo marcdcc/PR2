@@ -11,7 +11,7 @@ try {
     $nombre_cliente=$_POST['nombre_cliente'];
     $id_reserva=$_POST['id_reserva'];
 
-    $comprobar_reserva = $pdo->prepare("SELECT * FROM tbl_reserva where fecha_inicio = '$fecha_inicio' and hora_reserva = '$hora_reserva';");
+    $comprobar_reserva = $pdo->prepare("SELECT * FROM tbl_reserva where fecha_inicio = '$fecha_inicio' and hora_reserva = '$hora_reserva'");
     $comprobar_reserva->execute();
     $comprobar_reserva = $comprobar_reserva->rowCount();
 

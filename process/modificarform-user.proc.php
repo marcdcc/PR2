@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/salas.css">
     <link rel="stylesheet" href="../css/modificar_generar.css">
-    <script type="text/javascript" src="../js/modificar_generar.js"></script>
+    <script type="text/javascript" src="../js/modificar_user.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Modificar</title>
 </head>
@@ -25,7 +25,7 @@
         include '../services/conexion.php';
         include '../services/user.php';
 
-        $id = $_GET['id'];
+        
         $qry = $pdo->prepare("SELECT * FROM tbl_users where id_user = ?");
         $qry->bindParam(1, $id);
         $qry->execute();

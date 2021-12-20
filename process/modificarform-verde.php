@@ -47,7 +47,7 @@
                 <p>Introduce el nombre del titular de la reserva</p>
                 <input type="text" name="nombre_cliente" id='nombre_cliente' value="<?php echo $reserva['nombre_cliente'] ?>">
                 <br>
-                <input type="hidden" name="id_mesa" value="<?php echo $_GET['id_mesa'] ?>">
+                <input type="hidden" name="id_reserva" value="<?php echo $_GET['id'] ?>">
                 <br>
                 <input type="submit" value="Modificar reserva" class="btn btn-dark">
         </form>

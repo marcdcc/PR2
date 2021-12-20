@@ -10,8 +10,6 @@ $id_reserva = $_GET['id'];
 $fecha_actual=date("Y-m-d");
 
 
-// Bind
-
 try {
 
     $fin_reserva = $pdo->prepare("UPDATE tbl_reserva

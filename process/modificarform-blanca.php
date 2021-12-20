@@ -20,10 +20,10 @@
         $reserva=$qry->fetch(PDO::FETCH_ASSOC);
         ?>
         <div class='log'>
-                <a href='../process/logout.php' class='btn btn-light' style='padding-left: 60px;padding-right: 60px; border-color: black; color: black;'>Logout</a>
+                <a href='../process/logout.php' class='btn btn-light' style='padding-left: 60px; padding-right: 60px; border-color: black; color: black;'>Logout</a>
         </div>
         <div class='inicio'>
-                <a href='../view/reservas-blanca.php' class='btn btn-dark' style='padding-left: 60px;padding-right: 60px; border-color: white'>Back</a>
+                <a href='../view/reservas-blanca.php' class='btn btn-dark' style='padding-left: 60px; padding-right: 60px; border-color: white'>Back</a>
         </div>
         <form action="modificarpdo-blanca.php" method="post" class="caja" onsubmit="return validar()">
                 <h2 class="titulo">Modificar reserva</h2>
